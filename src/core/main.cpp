@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
+#include <src/core/logger.hpp>
 
 int main() {
   Core::Controller app{};
@@ -9,7 +10,7 @@ int main() {
   try {
     app.run();
   } catch (const std::exception& e) {
-    std::cerr << e.what() << std::endl;
+    Logger::Log(e.what());
     return EXIT_FAILURE;
   }
   return EXIT_SUCCESS;
