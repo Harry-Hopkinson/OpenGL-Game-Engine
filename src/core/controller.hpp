@@ -1,5 +1,3 @@
-#pragma once
-
 #include <src/core/window.hpp>
 
 namespace Core {
