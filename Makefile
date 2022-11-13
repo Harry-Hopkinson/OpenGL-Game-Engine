@@ -1,7 +1,9 @@
+files = ${wildcard src/*.cpp} ${wildcard src/*.hpp}
 include = -I./Dependencies -I.
 libraries = -L./Dependencies/lib
-files = ${wildcard src/core/*.cpp} ${wildcard src/core/*.hpp} ${wildcard src/*.cpp} ${wildcard src/*.hpp} ${wildcard src/*.c} ${wildcard src/*.h}
+linker = -lglfw3dll -lglfw3 -lvulkan-1 -lgdi32 -lglfw3 -lopengl32 -lgdi32 -lwinmm
+version = -std=c++20
 
 run:
-	g++ -g -std=c++17 ${include} ${libraries} ${files} -lglfw3dll -lglfw3 -lvulkan-1 -lgdi32 -lglfw3 -o bin/engine.exe
-	./bin/engine.exe
+	g++ -o bin/engine.exe ${version} ${include} ${libraries} ${files} ${linker}
+	cd bin && engine.exe

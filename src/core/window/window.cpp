@@ -1,4 +1,4 @@
-#include <src/core/window.hpp>
+#include <src/core/window/window.hpp>
 
 namespace Core {
   Window::Window(int w, int h, std::string name) : width{w}, height{h}, windowName{name} {

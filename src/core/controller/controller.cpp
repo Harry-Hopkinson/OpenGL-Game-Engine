@@ -1,5 +1,5 @@
-#include <src/core/controller.hpp>
-#include <src/core/fps.cpp>
+#include <src/core/controller/controller.hpp>
+#include <src/core/fps/fps.cpp>
 
 namespace Core {
 

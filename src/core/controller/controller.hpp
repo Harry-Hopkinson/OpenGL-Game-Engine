@@ -1,4 +1,4 @@
-#include <src/core/window.hpp>
+#include <src/core/window/window.cpp>
 
 namespace Core {
 class Controller {

@@ -1,8 +1,8 @@
-#include <src/core/controller.hpp>
+#include <src/core/controller/controller.cpp>
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
-#include <src/core/logger.hpp>
+#include <src/core/logger/logger.hpp>
 
 int main() {
   Core::Controller app{};
