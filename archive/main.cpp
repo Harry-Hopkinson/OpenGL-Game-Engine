@@ -1,5 +1,5 @@
-#include <src/utils.h>
-#include <src/shaders.h>
+#include <utils.h>
+#include <shaders.h>
 
 #include <iostream>
 

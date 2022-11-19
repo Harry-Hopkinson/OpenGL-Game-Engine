@@ -1,9 +1,18 @@
-files = ${wildcard src/*.cpp} ${wildcard src/*.hpp}
-include = -I./Dependencies -I.
-libraries = -L./Dependencies/lib
-linker = -lglfw3dll -lglfw3 -lvulkan-1 -lgdi32 -lglfw3 -lopengl32 -lgdi32 -lwinmm
-version = -std=c++20
+CC = g++
+CXXFLAGS = -std=c++20 -Wall
+LDFLAGS = 
 
-run:
-	g++ -o bin/engine.exe ${version} ${include} ${libraries} ${files} ${linker}
+APPNAME = engine
+OUT = bin/engine.exe
+
+files = ${wildcard src/*.cpp} ${wildcard src/*.hpp}
+include = -I./Dependencies -I. -I./src
+libraries = -L./Dependencies/lib
+linker = -lglfw3 -lglfw3 -lopengl32 -lgdi32 -lwinmm
+
+${APPNAME}:
+	${CC} -o ${OUT} ${include} ${libraries} ${files} ${linker}
 	cd bin && engine.exe
+
+clean:
+	cd bin && del engine.exe

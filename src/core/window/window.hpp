@@ -12,6 +12,7 @@ namespace Core {
       Window &operator=(const Window &) = delete;
 
       bool shouldClose() { return glfwWindowShouldClose(window); }
+      GLFWwindow*  getWindow();
 
     private:
       void initWindow();

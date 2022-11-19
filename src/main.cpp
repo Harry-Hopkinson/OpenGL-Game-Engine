@@ -1,11 +1,13 @@
-#include <src/core/controller/controller.cpp>
+#include <core/controller/controller.cpp>
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
-#include <src/core/logger/logger.hpp>
+#include <core/logger/logger.hpp>
+#include <core/audio/audio.cpp>
 
-int main() {
+int main(int argc, char *argv[]) {
   Core::Controller app{};
+  playSound();
 
   try {
     app.run();

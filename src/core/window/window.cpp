@@ -1,4 +1,4 @@
-#include <src/core/window/window.hpp>
+#include <core/window/window.hpp>
 
 namespace Core {
   Window::Window(int w, int h, std::string name) : width{w}, height{h}, windowName{name} {
@@ -16,5 +16,9 @@ namespace Core {
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     window = glfwCreateWindow(width, height, windowName.c_str(), nullptr, nullptr);
+  }
+
+  GLFWwindow* Window::getWindow() {
+    return window;
   }
 }
