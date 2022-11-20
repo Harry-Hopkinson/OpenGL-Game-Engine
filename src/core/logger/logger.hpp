@@ -1,6 +1,13 @@
+#pragma once
+
 #include <iostream>
-#include <core/logger/logger.cpp>
+#include <string>
 
 namespace Logger {
-  void Log(const std::string& message);
+  typedef std::string String;
+  typedef std::basic_ostream<char, std::char_traits<char>> OutputStream;
+
+  OutputStream& Log(const String& message) {
+    return std::cout << message << std::endl;
+  }
 }

@@ -1,4 +1,5 @@
-#define GLFW_INCLUDE_VULKAN
+#pragma once
+
 #include <GLFW/glfw3.h>
 #include <iostream>
 

@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <windows.h>
-#include <windowsx.h>
-#include <mmsystem.h>
+// #include <src/core/audio/audio.hpp>
+// #include <iostream>
 
-void playSound() 
-{
-  PlaySound(TEXT("../audio\\music.wav"), NULL, SND_ASYNC);
-}
+// template<typename T>
+// void playAudio(T path) {
+//   std::cout << "Hello World" << std::endl;
+// }

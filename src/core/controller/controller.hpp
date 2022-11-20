@@ -1,3 +1,5 @@
+#pragma once
+
 #include <core/window/window.cpp>
 
 namespace Core {

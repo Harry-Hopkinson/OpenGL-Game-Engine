@@ -3,11 +3,11 @@
 #include <iostream>
 #include <stdexcept>
 #include <core/logger/logger.hpp>
-#include <core/audio/audio.cpp>
+#include <core/audio/audio.hpp>
 
 int main(int argc, char *argv[]) {
   Core::Controller app{};
-  playSound();
+  playAudio("../audio/music.wav");
 
   try {
     app.run();

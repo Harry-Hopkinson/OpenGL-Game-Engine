@@ -1,4 +1,4 @@
-#include <src/core/render/render.hpp>
+#include <core/render/render.hpp>
 
 void init() 
 {
