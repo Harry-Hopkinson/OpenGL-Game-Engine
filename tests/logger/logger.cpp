@@ -1,17 +1,11 @@
-#include <core/logger/logger.hpp>
+#include <src/core/logger/logger.hpp>
 
-namespace Logger
+int logger()
 {
-  void Fail(std::string message)
-  {
-    printRed(message);
-  }
-  void Pass(std::string message)
-  {
-    printGreen(message);
-  }
-  void Log(std::string message)
-  {
-    std::cout << message << std::endl;
-  }
+  Logger logger;
+  // log hello world and expect it to be printed to the console
+  std::string expected = "Hello World!";
+  logger.Log(expected);
+  logger.Fail("Test Fail");
+  logger.Pass("Test Pass");
 }
