@@ -1,5 +1,6 @@
 #include <core/render/init.cpp>
 
-int renderImage() {
+int renderImage()
+{
   return 0;
 }

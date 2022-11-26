@@ -3,24 +3,27 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-namespace Core {
-  class Window {
-    public:
-      Window(int w, int h, std::string name);
-      ~Window();
+namespace Core
+{
+  class Window
+  {
+  public:
+    Window(int w, int h, std::string name);
+    ~Window();
 
-      Window(const Window &) = delete;
-      Window &operator=(const Window &) = delete;
+    Window(const Window &) = delete;
+    Window &operator=(const Window &) = delete;
 
-      bool shouldClose() { return glfwWindowShouldClose(window); }
-      GLFWwindow*  getWindow();
+    bool shouldClose() { return glfwWindowShouldClose(window); }
+    GLFWwindow *getWindow();
 
-    private:
-      void initWindow();
+  private:
+    void initWindow();
 
-      const int width;
-      const int height;
+    const int width;
+    const int height;
 
-      std::string windowName;
-      GLFWwindow *window;
-};}
+    std::string windowName;
+    GLFWwindow *window;
+  };
+}

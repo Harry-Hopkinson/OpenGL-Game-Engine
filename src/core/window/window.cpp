@@ -1,16 +1,20 @@
 #include <core/window/window.hpp>
 
-namespace Core {
-  Window::Window(int w, int h, std::string name) : width{w}, height{h}, windowName{name} {
+namespace Core
+{
+  Window::Window(int w, int h, std::string name) : width{w}, height{h}, windowName{name}
+  {
     initWindow();
   }
 
-  Window::~Window() {
+  Window::~Window()
+  {
     glfwDestroyWindow(window);
     glfwTerminate();
   }
 
-  void Window::initWindow() {
+  void Window::initWindow()
+  {
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
@@ -18,7 +22,8 @@ namespace Core {
     window = glfwCreateWindow(width, height, windowName.c_str(), nullptr, nullptr);
   }
 
-  GLFWwindow* Window::getWindow() {
+  GLFWwindow *Window::getWindow()
+  {
     return window;
   }
 }

@@ -6,8 +6,8 @@
 #include <mmsystem.h>
 #include <tchar.h>
 
-
-template<typename T>
-void playAudio(T path) {
+template <typename T>
+void playAudio(T path)
+{
   PlaySound(path, NULL, SND_FILENAME | SND_ASYNC);
 }

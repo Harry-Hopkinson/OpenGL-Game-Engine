@@ -1,7 +1,18 @@
-#include <iostream>
+#include <core/logger/logger.hpp>
 
-namespace Logger {
-  void Log(const std::string& message) {
-    std::cerr << message << std::endl;
+class Logger
+{
+public:
+  void Log(std::string message)
+  {
+    std::cout << message << std::endl;
   }
-}
+  void Pass(std::string message)
+  {
+    printGreen(message);
+  }
+  void Fail(std::string message)
+  {
+    printRed(message);
+  }
+};

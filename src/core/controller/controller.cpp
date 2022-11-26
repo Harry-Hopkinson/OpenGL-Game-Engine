@@ -5,14 +5,19 @@
 
 Keyboard keyboard;
 
-namespace Core {
+namespace Core
+{
 
-void Controller::run() {
-  while (!window.shouldClose()) {
-    glfwPollEvents();
-    // check if keyboard pressed
-    if (glfwGetKey(window.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-      glfwSetWindowShouldClose(window.getWindow(), true);
+  void Controller::run()
+  {
+    while (!window.shouldClose())
+    {
+      glfwPollEvents();
+      // check if keyboard pressed
+      if (glfwGetKey(window.getWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+      {
+        glfwSetWindowShouldClose(window.getWindow(), true);
+      }
     }
   }
-}}
+}

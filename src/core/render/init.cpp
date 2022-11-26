@@ -1,6 +1,6 @@
 #include <core/render/render.hpp>
 
-void init() 
+void init()
 {
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
   glMatrixMode(GLUT_SINGLE | GLUT_RGB);
