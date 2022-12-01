@@ -16,6 +16,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Vendors Setup
+        run: |
+          mkdir vendors
+          git clone https://github.com/Harry-Hopkinson/OpenGL-Files.git
       - name: Engine Compile
         run: |
           make build
