@@ -3,8 +3,13 @@
 int main(int argc, char *argv[])
 {
   Logger logger;
-  logger.Log("Hello World!");
-  logger.Fail("Test Fail");
-  logger.Pass("Test Pass");
-  return 0;
+  std::ostream &output = logger.Log("Hello World!");
+  if (output.good())
+  {
+    logger.Pass("No badbit set");
+  }
+  else
+  {
+    return 1;
+  }
 }

@@ -1,11 +1,27 @@
 #include <src/core/logger/logger.hpp>
 
-int logger()
+int main(int argc, char *argv[])
 {
   Logger logger;
-  // log hello world and expect it to be printed to the console
-  std::string expected = "Hello World!";
-  logger.Log(expected);
-  logger.Fail("Test Fail");
-  logger.Pass("Test Pass");
+  std::ostream &output = logger.Log("Hello World!");
+  if (output.good())
+  {
+    logger.Pass("No badbit set");
+  }
+  else
+  {
+    logger.Fail("Badbit set");
+  }
+
+  std::stringstream ss;
+  ss << output.rdbuf();
+  std::string outputBuffer = ss.str();
+  if (outputBuffer == "Hello World!")
+  {
+    logger.Pass("Output is parameter");
+  }
+  else
+  {
+    logger.Fail("Output is not parameter");
+  }
 }

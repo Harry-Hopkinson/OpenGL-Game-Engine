@@ -1,18 +1,30 @@
-#include <core/logger/logger.hpp>
+#include <src/core/logger/logger.hpp>
+
+std::ostream &printGreen(std::string message)
+{
+  return std::cout << "\033[1;32m" << message << "\033[0m"
+                   << "\n";
+}
+
+std::ostream &printRed(std::string message)
+{
+  return std::cout << "\033[1;31m" << message << "\033[0m"
+                   << "\n";
+}
 
 class Logger
 {
 public:
-  void Log(std::string message)
+  std::ostream &Log(std::string message)
   {
-    std::cout << message << std::endl;
+    return std::cout << message << "\n";
   }
-  void Pass(std::string message)
+  std::ostream &Pass(std::string message)
   {
-    printGreen(message);
+    return printGreen(message);
   }
-  void Fail(std::string message)
+  std::ostream &Fail(std::string message)
   {
-    printRed(message);
+    return printRed(message);
   }
 };

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 std::ostream &printGreen(std::string message)
 {
@@ -17,16 +19,16 @@ std::ostream &printRed(std::string message)
 class Logger
 {
 public:
-  std::ostream &Log(std::string message)
+  std::basic_ostream<char, std::char_traits<char>> &Log(std::string message)
   {
     return std::cout << message << "\n";
   }
-  std::ostream &Pass(std::string message)
+  void Pass(std::string message)
   {
-    return printGreen(message);
+    printGreen(message);
   }
-  std::ostream &Fail(std::string message)
+  void Fail(std::string message)
   {
-    return printRed(message);
+    printRed(message);
   }
 };
