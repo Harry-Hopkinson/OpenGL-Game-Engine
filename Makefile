@@ -6,10 +6,10 @@ LDFLAGS =
 APPNAME = engine
 OUT = bin/engine.exe
 
-files = ${wildcard src/*.cpp} ${wildcard src/*.hpp} ${wildcard src/*.c}
+files = ${wildcard src/*.cpp} ${wildcard src/*.hpp}
 include = -I./vendors -I. -I./src
 libraries = -L./vendors/lib
-linker = -lglfw3 -lglfw3 -lopengl32 -lgdi32 -lwinmm -lglu32 -lfreeglut
+linker = -lglfw3 -lglfw3 -lopengl32 -lgdi32 -lwinmm
 
 # test variables
 TESTNAME = test
@@ -18,11 +18,11 @@ TESTInclude = -I./vendors -I. -I./src
 testFiles = ${wildcard tests/*.cpp} ${wildcard tests/*.hpp}
 
 ${APPNAME}:
-	${CC} -o ${OUT} ${include} ${libraries} ${files} ${linker}
+	${CC} -o ${OUT} ${include} ${libraries} ${files} vendors/glad.c ${linker}
 	cd bin && engine.exe
 
 build:
-	${CC} -o ${OUT} ${include} ${libraries} ${files} ${linker}
+	${CC} -o ${OUT} ${include} ${libraries} ${files} vendors/glad.c ${linker}
 
 testBuild:
 	${CC} -o ${TESTOUT} ${TESTInclude} ${libraries} ${testFiles} ${linker}

@@ -10,9 +10,9 @@ namespace Core
     static constexpr int WIDTH = 800;
     static constexpr int HEIGHT = 600;
 
-    void run();
+    int run();
 
   private:
-    Window window{WIDTH, HEIGHT, "Hello Vulkan!"};
+    Window window{WIDTH, HEIGHT, "Window (" + std::to_string(WIDTH) + "x" + std::to_string(HEIGHT) + ")"};
   };
 }

@@ -12,4 +12,11 @@ int main(int argc, char *argv[])
   {
     return 1;
   }
+  std::stringstream ss;
+  ss << output.rdbuf();
+  if (ss.str() == "Hello World!")
+  {
+    logger.Pass("Output is correct");
+  }
+  std::cout << ss.str() << "\n";
 }
