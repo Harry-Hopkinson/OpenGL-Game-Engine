@@ -7,8 +7,7 @@ A Game Engine created using OpenGL and C++
 ### Clone the SDL Files
 
 ```bash
-mkdir vendors
-git clone https://github.com/Harry-Hopkinson/OpenGL-Files.git
+git clone https://github.com/Harry-Hopkinson/vendors.git
 ```
 
 ### Build and run the Project
